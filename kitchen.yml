@@ -1,0 +1,24 @@
+---
+driver:
+  name: terraform
+  root_module_directory: test/fixtures/tf_module
+  parallelism: 4
+  variables:
+    project_id: lucky-apparatus-366518
+
+provisioner:
+  name: terraform
+
+verifier:
+  name: terraform
+  systems:
+    - name: basic
+      backend: local
+      controls:
+        - network_check
+
+platforms:
+  - name: terraform
+
+suites:
+  - name: kt_suite
