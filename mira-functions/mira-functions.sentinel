@@ -1,0 +1,170 @@
+# Common functions that use the tfplan/v2 import
+
+# The filter functions all accept a collection of resource changes, an attribute,
+# a value or a list of values, and a boolean, prtmsg, which can be true or false
+# and indicates whether the filter function should print violation messages.
+# The filter functions return a map consisting of 2 items:
+#   * "resources": a map consisting of resource changes that violate a condition
+#   * "messages":  a map of violation messages associated with the resources
+# Note that both the resources and messages collections are indexed by the
+# address of the resources, so they will have the same order and length.
+# The filter functions all call evaluate_attribute() to evaluate attributes
+# of resources even if nested deep within them.
+
+##### Imports #####
+import "tfplan/v2" as tfplan
+import "strings"
+import "types"
+
+##### Functions #####
+
+### check_number_of_networks ###
+# Check if the number of planned networks
+# is less than the number of allowed ones
+# attribute (attr) is a list of the planned resources
+# attribute (value) is the subnet enumeration
+# Set prtmsg to `true` (without quotes) if you want to print violation messages.
+# If you want to match null, set value to "null".
+check_number_of_networks = func(resources, value, prtmsg) {
+  network_limits = {
+    "ainotebook-vpc-primary": 3, 
+	"cloudsql-vpc-primary": 2,
+	"composer-master-primary": 5,
+	"composer-node-primary": 2,
+  } 
+  subnet_limit = network_limits[value]
+  
+  violators = 0
+  messages = {}
+    for resources as address, rc {
+      v = evaluate_attribute(rc, "network_type") else null
+        if v is null {
+          v = "null"
+        }
+        if v is value {
+          violators += 1
+        }
+    }
+  
+  if violators > subnet_limit {
+    message = "Number of " + to_string(value) + " subnets(" + to_string(violators) + 
+	  ") is greater than allowed for automatic provisioning(" + to_string(subnet_limit) + ")"
+      if prtmsg {
+        print(message)
+      }
+    return false   
+  }
+
+  return true
+}
+
+### evaluate_attribute ###
+# Evaluates the value of a resource's or block's attribute even if nested.
+# The resource should be derived by applying filters to tfplan.resource_changes.
+# It can be given in the initial call in the form rc.change.after or just rc.
+# If you want to evaluate previous values, pass `rc.change.before` instead of
+# `rc` since the function converts `rc` by itself to `rc.change.after`.
+# Indices of lists should be given as 0, 1, 2, and so on.
+# For example: boot_disk.0.initialize_params.0.image
+evaluate_attribute = func(r, attribute) {
+
+  # Split the attribute into a list, using "." as the separator
+  attributes = strings.split(attribute, ".")
+
+  # Convert numeric strings to integers for indices
+  if attributes[0] matches "^[0-9]+$" {
+    a = int(attributes[0])
+    # Make sure r is of type list
+    if types.type_of(r) is not "list" {
+      return undefined
+    }
+  } else {
+    a = attributes[0]
+  }
+
+  # Append the current attribute to the resource instance
+  if (types.type_of(r) is "map" and "change" in keys(r)) and
+     (types.type_of(r.change) is "map" and "after" in keys(r.change)) {
+    new_r = r.change.after[a] else null
+  } else {
+    new_r = r[a] else null
+  }
+
+  # Process based on length of attributes
+  # being greater than or equal to 1
+  if length(attributes) > 1 {
+
+    # Strip first element from attributes
+    attributes = attributes[1:length(attributes)]
+    attribute = strings.join(attributes, ".")
+
+    # Make recursive call
+    return evaluate_attribute(new_r, attribute)
+  } else {
+
+    # We reached the end of the attribute and can stop the
+    # recursive calls and return the value of the attribute
+    return new_r
+
+  }
+}
+
+### to_string ###
+# Convert objects of unknown type to string
+# It is used to build messages added to the messages map returned by the
+# filter functions
+to_string = func(obj) {
+  case types.type_of(obj) {
+    when "string":
+      return obj
+    when "int", "float", "bool":
+      return string(obj)
+    when "null":
+      return "null"
+    when "undefined":
+      return "undefined"
+    when "list":
+      output = "["
+      lastIndex = length(obj) - 1
+      for obj as index, value {
+        if index < lastIndex {
+          output += to_string(value) + ", "
+        } else {
+          output += to_string(value)
+        }
+      }
+      output += "]"
+      return output
+    when "map":
+      output = "{"
+      theKeys = keys(obj)
+      lastIndex = length(theKeys) - 1
+      for theKeys as index, key {
+        if index < lastIndex {
+          output += to_string(key) + ": " + to_string(obj[key]) + ", "
+        } else {
+          output += to_string(key) + ": " + to_string(obj[key])
+        }
+      }
+      output += "}"
+      return output
+    else:
+      return ""
+  }
+}
+
+### find_resources ###
+# Find all resources of a specific type using the tfplan/v2 import.
+# Include resources that are not being permanently deleted.
+# Technically, this returns a map of resource changes.
+find_resources = func(type) {
+  resources = filter tfplan.resource_changes as address, rc {
+  	rc.type is type and
+  	rc.mode is "managed" and
+  	(rc.change.actions contains "create" or rc.change.actions contains "update" or
+     rc.change.actions contains "read" or (rc.change.actions contains "no-op" and
+     rc.change.after is not null))
+  }
+
+  return resources
+}

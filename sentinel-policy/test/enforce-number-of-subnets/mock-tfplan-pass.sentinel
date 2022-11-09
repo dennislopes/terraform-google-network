@@ -1,0 +1,1652 @@
+terraform_version = "1.3.3"
+
+planned_values = {
+	"outputs": {},
+	"resources": {
+		"module.test-vpc-module.module.subnets.google_compute_subnetwork.subnetwork[\"us-west1/subnet-001\"]": {
+			"address":        "module.test-vpc-module.module.subnets.google_compute_subnetwork.subnetwork[\"us-west1/subnet-001\"]",
+			"depends_on":     [],
+			"deposed_key":    "",
+			"index":          "us-west1/subnet-001",
+			"mode":           "managed",
+			"module_address": "module.test-vpc-module.module.subnets",
+			"name":           "subnetwork",
+			"provider_name":  "registry.terraform.io/hashicorp/google",
+			"tainted":        false,
+			"type":           "google_compute_subnetwork",
+			"values": {
+				"description":              null,
+				"ip_cidr_range":            "10.10.10.0/24",
+				"ipv6_access_type":         null,
+				"log_config":               [],
+				"name":                     "subnet-001",
+				"subnet_type":              "composer-node-primary",
+				"network":                  "my-custom-mode-network",
+				"private_ip_google_access": false,
+				"project":                  "lucky-apparatus-366518",
+				"region":                   "us-west1",
+				"role":                     null,
+				"secondary_ip_range":       [],
+				"timeouts":                 null,
+			},
+		},
+		"module.test-vpc-module.module.subnets.google_compute_subnetwork.subnetwork[\"us-west1/subnet-002\"]": {
+			"address":        "module.test-vpc-module.module.subnets.google_compute_subnetwork.subnetwork[\"us-west1/subnet-002\"]",
+			"depends_on":     [],
+			"deposed_key":    "",
+			"index":          "us-west1/subnet-002",
+			"mode":           "managed",
+			"module_address": "module.test-vpc-module.module.subnets",
+			"name":           "subnetwork",
+			"provider_name":  "registry.terraform.io/hashicorp/google",
+			"tainted":        false,
+			"type":           "google_compute_subnetwork",
+			"values": {
+				"description":      null,
+				"ip_cidr_range":    "10.10.20.0/24",
+				"ipv6_access_type": null,
+				"log_config": [
+					{
+						"aggregation_interval": "INTERVAL_5_SEC",
+						"filter_expr":          "true",
+						"flow_sampling":        0.5,
+						"metadata":             "INCLUDE_ALL_METADATA",
+						"metadata_fields":      null,
+					},
+				],
+				"name":                     "subnet-002",
+				"network":                  "my-custom-mode-network",
+				"private_ip_google_access": true,
+				"project":                  "lucky-apparatus-366518",
+				"region":                   "us-west1",
+				"role":                     null,
+				"secondary_ip_range":       [],
+				"timeouts":                 null,
+			},
+		},
+		"module.test-vpc-module.module.subnets.google_compute_subnetwork.subnetwork[\"us-west1/subnet-003\"]": {
+			"address":        "module.test-vpc-module.module.subnets.google_compute_subnetwork.subnetwork[\"us-west1/subnet-003\"]",
+			"depends_on":     [],
+			"deposed_key":    "",
+			"index":          "us-west1/subnet-003",
+			"mode":           "managed",
+			"module_address": "module.test-vpc-module.module.subnets",
+			"name":           "subnetwork",
+			"provider_name":  "registry.terraform.io/hashicorp/google",
+			"tainted":        false,
+			"type":           "google_compute_subnetwork",
+			"values": {
+				"description":      null,
+				"ip_cidr_range":    "10.10.30.0/24",
+				"ipv6_access_type": null,
+				"log_config": [
+					{
+						"aggregation_interval": "INTERVAL_10_MIN",
+						"filter_expr":          "true",
+						"flow_sampling":        0.7,
+						"metadata":             "INCLUDE_ALL_METADATA",
+						"metadata_fields":      null,
+					},
+				],
+				"name":                     "subnet-003",
+				"network":                  "my-custom-mode-network",
+				"private_ip_google_access": false,
+				"project":                  "lucky-apparatus-366518",
+				"region":                   "us-west1",
+				"role":                     null,
+				"secondary_ip_range":       [],
+				"timeouts":                 null,
+			},
+		},
+		"module.test-vpc-module.module.vpc.google_compute_network.network": {
+			"address":        "module.test-vpc-module.module.vpc.google_compute_network.network",
+			"depends_on":     [],
+			"deposed_key":    "",
+			"index":          null,
+			"mode":           "managed",
+			"module_address": "module.test-vpc-module.module.vpc",
+			"name":           "network",
+			"provider_name":  "registry.terraform.io/hashicorp/google",
+			"tainted":        false,
+			"type":           "google_compute_network",
+			"values": {
+				"auto_create_subnetworks":         false,
+				"delete_default_routes_on_create": false,
+				"description":                     "",
+				"enable_ula_internal_ipv6":        null,
+				"mtu":          1460,
+				"name":         "my-custom-mode-network",
+				"project":      "lucky-apparatus-366518",
+				"routing_mode": "GLOBAL",
+				"timeouts":     null,
+			},
+		},
+		"null_resource.create_file": {
+			"address":        "null_resource.create_file",
+			"depends_on":     [],
+			"deposed_key":    "",
+			"index":          null,
+			"mode":           "managed",
+			"module_address": "",
+			"name":           "create_file",
+			"provider_name":  "registry.terraform.io/hashicorp/null",
+			"tainted":        false,
+			"type":           "null_resource",
+			"values": {
+				"triggers": null,
+			},
+		},
+	},
+}
+
+variables = {}
+
+resource_changes = {
+	"module.test-vpc-module.module.subnets.google_compute_subnetwork.subnetwork[\"us-west1/subnet-001\"]": {
+		"address": "module.test-vpc-module.module.subnets.google_compute_subnetwork.subnetwork[\"us-west1/subnet-001\"]",
+		"change": {
+			"actions": [
+				"create",
+			],
+			"after": {
+				"description":              null,
+				"ip_cidr_range":            "10.10.10.0/24",
+				"ipv6_access_type":         null,
+				"log_config":               [],
+				"name":                     "subnet-001",
+				"network":                  "my-custom-mode-network",
+				"network_type":             "composer-node-primary",
+				"private_ip_google_access": false,
+				"project":                  "lucky-apparatus-366518",
+				"region":                   "us-west1",
+				"role":                     null,
+				"secondary_ip_range":       [],
+				"timeouts":                 null,
+			},
+			"after_unknown": {
+				"creation_timestamp":         true,
+				"external_ipv6_prefix":       true,
+				"fingerprint":                true,
+				"gateway_address":            true,
+				"id":                         true,
+				"ipv6_cidr_range":            true,
+				"log_config":                 [],
+				"private_ipv6_google_access": true,
+				"purpose":                    true,
+				"secondary_ip_range":         [],
+				"self_link":                  true,
+				"stack_type":                 true,
+			},
+			"before": null,
+		},
+		"deposed":        "",
+		"index":          "us-west1/subnet-001",
+		"mode":           "managed",
+		"module_address": "module.test-vpc-module.module.subnets",
+		"name":           "subnetwork",
+		"provider_name":  "registry.terraform.io/hashicorp/google",
+		"type":           "google_compute_subnetwork",
+	},
+	"module.test-vpc-module.module.subnets.google_compute_subnetwork.subnetwork[\"us-west1/subnet-002\"]": {
+		"address": "module.test-vpc-module.module.subnets.google_compute_subnetwork.subnetwork[\"us-west1/subnet-002\"]",
+		"change": {
+			"actions": [
+				"create",
+			],
+			"after": {
+				"description":      null,
+				"ip_cidr_range":    "10.10.20.0/24",
+				"ipv6_access_type": null,
+				"log_config": [
+					{
+						"aggregation_interval": "INTERVAL_5_SEC",
+						"filter_expr":          "true",
+						"flow_sampling":        0.5,
+						"metadata":             "INCLUDE_ALL_METADATA",
+						"metadata_fields":      null,
+					},
+				],
+				"name":                     "subnet-002",
+				"network":                  "my-custom-mode-network",
+				"network_type":             "composer-node-primary",
+				"private_ip_google_access": true,
+				"project":                  "lucky-apparatus-366518",
+				"region":                   "us-west1",
+				"role":                     null,
+				"secondary_ip_range":       [],
+				"timeouts":                 null,
+			},
+			"after_unknown": {
+				"creation_timestamp":   true,
+				"external_ipv6_prefix": true,
+				"fingerprint":          true,
+				"gateway_address":      true,
+				"id":                   true,
+				"ipv6_cidr_range":      true,
+				"log_config": [
+					{},
+				],
+				"private_ipv6_google_access": true,
+				"purpose":                    true,
+				"secondary_ip_range":         [],
+				"self_link":                  true,
+				"stack_type":                 true,
+			},
+			"before": null,
+		},
+		"deposed":        "",
+		"index":          "us-west1/subnet-002",
+		"mode":           "managed",
+		"module_address": "module.test-vpc-module.module.subnets",
+		"name":           "subnetwork",
+		"provider_name":  "registry.terraform.io/hashicorp/google",
+		"type":           "google_compute_subnetwork",
+	},
+	"module.test-vpc-module.module.subnets.google_compute_subnetwork.subnetwork[\"us-west1/subnet-003\"]": {
+		"address": "module.test-vpc-module.module.subnets.google_compute_subnetwork.subnetwork[\"us-west1/subnet-003\"]",
+		"change": {
+			"actions": [
+				"create",
+			],
+			"after": {
+				"description":      null,
+				"ip_cidr_range":    "10.10.30.0/24",
+				"ipv6_access_type": null,
+				"log_config": [
+					{
+						"aggregation_interval": "INTERVAL_10_MIN",
+						"filter_expr":          "true",
+						"flow_sampling":        0.7,
+						"metadata":             "INCLUDE_ALL_METADATA",
+						"metadata_fields":      null,
+					},
+				],
+				"name":                     "subnet-003",
+				"network":                  "my-custom-mode-network",
+				"private_ip_google_access": false,
+				"project":                  "lucky-apparatus-366518",
+				"region":                   "us-west1",
+				"role":                     null,
+				"secondary_ip_range":       [],
+				"timeouts":                 null,
+			},
+			"after_unknown": {
+				"creation_timestamp":   true,
+				"external_ipv6_prefix": true,
+				"fingerprint":          true,
+				"gateway_address":      true,
+				"id":                   true,
+				"ipv6_cidr_range":      true,
+				"log_config": [
+					{},
+				],
+				"private_ipv6_google_access": true,
+				"purpose":                    true,
+				"secondary_ip_range":         [],
+				"self_link":                  true,
+				"stack_type":                 true,
+			},
+			"before": null,
+		},
+		"deposed":        "",
+		"index":          "us-west1/subnet-003",
+		"mode":           "managed",
+		"module_address": "module.test-vpc-module.module.subnets",
+		"name":           "subnetwork",
+		"provider_name":  "registry.terraform.io/hashicorp/google",
+		"type":           "google_compute_subnetwork",
+	},
+	"module.test-vpc-module.module.vpc.google_compute_network.network": {
+		"address": "module.test-vpc-module.module.vpc.google_compute_network.network",
+		"change": {
+			"actions": [
+				"create",
+			],
+			"after": {
+				"auto_create_subnetworks":         false,
+				"delete_default_routes_on_create": false,
+				"description":                     "",
+				"enable_ula_internal_ipv6":        null,
+				"mtu":          1460,
+				"name":         "my-custom-mode-network",
+				"project":      "lucky-apparatus-366518",
+				"routing_mode": "GLOBAL",
+				"timeouts":     null,
+			},
+			"after_unknown": {
+				"gateway_ipv4": true,
+				"id":           true,
+				"internal_ipv6_range": true,
+				"self_link":           true,
+			},
+			"before": null,
+		},
+		"deposed":        "",
+		"index":          null,
+		"mode":           "managed",
+		"module_address": "module.test-vpc-module.module.vpc",
+		"name":           "network",
+		"provider_name":  "registry.terraform.io/hashicorp/google",
+		"type":           "google_compute_network",
+	},
+	"null_resource.create_file": {
+		"address": "null_resource.create_file",
+		"change": {
+			"actions": [
+				"create",
+			],
+			"after": {
+				"triggers": null,
+			},
+			"after_unknown": {
+				"id": true,
+			},
+			"before": null,
+		},
+		"deposed":        "",
+		"index":          null,
+		"mode":           "managed",
+		"module_address": "",
+		"name":           "create_file",
+		"provider_name":  "registry.terraform.io/hashicorp/null",
+		"type":           "null_resource",
+	},
+}
+
+output_changes = {}
+
+raw = {
+	"configuration": {
+		"provider_config": {
+			"google": {
+				"full_name":          "registry.terraform.io/hashicorp/google",
+				"name":               "google",
+				"version_constraint": ">= 3.83.0, < 5.0.0",
+			},
+			"google-beta": {
+				"full_name":          "registry.terraform.io/hashicorp/google-beta",
+				"name":               "google-beta",
+				"version_constraint": ">= 3.45.0, < 5.0.0",
+			},
+			"null": {
+				"full_name": "registry.terraform.io/hashicorp/null",
+				"name":      "null",
+			},
+		},
+		"root_module": {
+			"module_calls": {
+				"test-vpc-module": {
+					"expressions": {
+						"mtu": {
+							"constant_value": 1460,
+						},
+						"network_name": {
+							"constant_value": "my-custom-mode-network",
+						},
+						"project_id": {
+							"constant_value": "lucky-apparatus-366518",
+						},
+						"subnets": {
+							"constant_value": [
+								{
+									"subnet_ip":     "10.10.10.0/24",
+									"subnet_name":   "subnet-001",
+									"subnet_region": "us-west1",
+								},
+								{
+									"subnet_flow_logs":      "true",
+									"subnet_ip":             "10.10.20.0/24",
+									"subnet_name":           "subnet-002",
+									"subnet_private_access": "true",
+									"subnet_region":         "us-west1",
+								},
+								{
+									"subnet_flow_logs":          "true",
+									"subnet_flow_logs_filter":   "false",
+									"subnet_flow_logs_interval": "INTERVAL_10_MIN",
+									"subnet_flow_logs_metadata": "INCLUDE_ALL_METADATA",
+									"subnet_flow_logs_sampling": 0.7,
+									"subnet_ip":                 "10.10.30.0/24",
+									"subnet_name":               "subnet-003",
+									"subnet_region":             "us-west1",
+								},
+							],
+						},
+					},
+					"module": {
+						"module_calls": {
+							"firewall_rules": {
+								"expressions": {
+									"network_name": {
+										"references": [
+											"module.vpc.network_name",
+											"module.vpc",
+										],
+									},
+									"project_id": {
+										"references": [
+											"var.project_id",
+										],
+									},
+									"rules": {
+										"references": [
+											"local.rules",
+										],
+									},
+								},
+								"module": {
+									"outputs": {
+										"firewall_rules": {
+											"description": "The created firewall rule resources",
+											"expression": {
+												"references": [
+													"google_compute_firewall.rules",
+												],
+											},
+										},
+									},
+									"resources": [
+										{
+											"address": "google_compute_firewall.rules",
+											"expressions": {
+												"description": {
+													"references": [
+														"each.value.description",
+														"each.value",
+													],
+												},
+												"destination_ranges": {
+													"references": [
+														"each.value.direction",
+														"each.value",
+														"each.value.ranges",
+														"each.value",
+													],
+												},
+												"direction": {
+													"references": [
+														"each.value.direction",
+														"each.value",
+													],
+												},
+												"name": {
+													"references": [
+														"each.value.name",
+														"each.value",
+													],
+												},
+												"network": {
+													"references": [
+														"var.network_name",
+													],
+												},
+												"priority": {
+													"references": [
+														"each.value.priority",
+														"each.value",
+													],
+												},
+												"project": {
+													"references": [
+														"var.project_id",
+													],
+												},
+												"source_ranges": {
+													"references": [
+														"each.value.direction",
+														"each.value",
+														"each.value.ranges",
+														"each.value",
+													],
+												},
+												"source_service_accounts": {
+													"references": [
+														"each.value.source_service_accounts",
+														"each.value",
+													],
+												},
+												"source_tags": {
+													"references": [
+														"each.value.source_tags",
+														"each.value",
+													],
+												},
+												"target_service_accounts": {
+													"references": [
+														"each.value.target_service_accounts",
+														"each.value",
+													],
+												},
+												"target_tags": {
+													"references": [
+														"each.value.target_tags",
+														"each.value",
+													],
+												},
+											},
+											"for_each_expression": {
+												"references": [
+													"var.rules",
+												],
+											},
+											"mode":                "managed",
+											"name":                "rules",
+											"provider_config_key": "google",
+											"schema_version":      1,
+											"type":                "google_compute_firewall",
+										},
+									],
+									"variables": {
+										"network_name": {
+											"description": "Name of the network this set of firewall rules applies to.",
+										},
+										"project_id": {
+											"description": "Project id of the project that holds the network.",
+										},
+										"rules": {
+											"default":     [],
+											"description": "List of custom rule definitions (refer to variables file for syntax).",
+										},
+									},
+								},
+								"source": "./modules/firewall-rules",
+							},
+							"routes": {
+								"expressions": {
+									"module_depends_on": {
+										"references": [
+											"module.subnets.subnets",
+											"module.subnets",
+										],
+									},
+									"network_name": {
+										"references": [
+											"module.vpc.network_name",
+											"module.vpc",
+										],
+									},
+									"project_id": {
+										"references": [
+											"var.project_id",
+										],
+									},
+									"routes": {
+										"references": [
+											"var.routes",
+										],
+									},
+								},
+								"module": {
+									"outputs": {
+										"routes": {
+											"description": "The created routes resources",
+											"expression": {
+												"references": [
+													"google_compute_route.route",
+												],
+											},
+										},
+									},
+									"resources": [
+										{
+											"address": "google_compute_route.route",
+											"depends_on": [
+												"var.module_depends_on",
+											],
+											"expressions": {
+												"description": {
+													"references": [
+														"each.value",
+													],
+												},
+												"dest_range": {
+													"references": [
+														"each.value",
+													],
+												},
+												"name": {
+													"references": [
+														"each.key",
+													],
+												},
+												"network": {
+													"references": [
+														"var.network_name",
+													],
+												},
+												"next_hop_gateway": {
+													"references": [
+														"each.value",
+													],
+												},
+												"next_hop_ilb": {
+													"references": [
+														"each.value",
+													],
+												},
+												"next_hop_instance": {
+													"references": [
+														"each.value",
+													],
+												},
+												"next_hop_instance_zone": {
+													"references": [
+														"each.value",
+													],
+												},
+												"next_hop_ip": {
+													"references": [
+														"each.value",
+													],
+												},
+												"next_hop_vpn_tunnel": {
+													"references": [
+														"each.value",
+													],
+												},
+												"priority": {
+													"references": [
+														"each.value",
+													],
+												},
+												"project": {
+													"references": [
+														"var.project_id",
+													],
+												},
+												"tags": {
+													"references": [
+														"each.value",
+													],
+												},
+											},
+											"for_each_expression": {
+												"references": [
+													"local.routes",
+												],
+											},
+											"mode":                "managed",
+											"name":                "route",
+											"provider_config_key": "google",
+											"schema_version":      0,
+											"type":                "google_compute_route",
+										},
+									],
+									"variables": {
+										"module_depends_on": {
+											"default":     [],
+											"description": "List of modules or resources this module depends on.",
+										},
+										"network_name": {
+											"description": "The name of the network where routes will be created",
+										},
+										"project_id": {
+											"description": "The ID of the project where the routes will be created",
+										},
+										"routes": {
+											"default":     [],
+											"description": "List of routes being created in this VPC",
+										},
+									},
+								},
+								"source": "./modules/routes",
+							},
+							"subnets": {
+								"expressions": {
+									"network_name": {
+										"references": [
+											"module.vpc.network_name",
+											"module.vpc",
+										],
+									},
+									"project_id": {
+										"references": [
+											"var.project_id",
+										],
+									},
+									"secondary_ranges": {
+										"references": [
+											"var.secondary_ranges",
+										],
+									},
+									"subnets": {
+										"references": [
+											"var.subnets",
+										],
+									},
+								},
+								"module": {
+									"outputs": {
+										"subnets": {
+											"description": "The created subnet resources",
+											"expression": {
+												"references": [
+													"google_compute_subnetwork.subnetwork",
+												],
+											},
+										},
+									},
+									"resources": [
+										{
+											"address": "google_compute_subnetwork.subnetwork",
+											"expressions": {
+												"description": {
+													"references": [
+														"each.value",
+													],
+												},
+												"ip_cidr_range": {
+													"references": [
+														"each.value.subnet_ip",
+														"each.value",
+													],
+												},
+												"name": {
+													"references": [
+														"each.value.subnet_name",
+														"each.value",
+													],
+												},
+												"network": {
+													"references": [
+														"var.network_name",
+													],
+												},
+												"private_ip_google_access": {
+													"references": [
+														"each.value",
+													],
+												},
+												"project": {
+													"references": [
+														"var.project_id",
+													],
+												},
+												"region": {
+													"references": [
+														"each.value.subnet_region",
+														"each.value",
+													],
+												},
+												"secondary_ip_range": {
+													"references": [
+														"var.secondary_ranges",
+														"each.value.subnet_name",
+														"each.value",
+														"var.secondary_ranges",
+														"each.value.subnet_name",
+														"each.value",
+														"var.secondary_ranges",
+														"each.value.subnet_name",
+														"each.value",
+													],
+												},
+											},
+											"for_each_expression": {
+												"references": [
+													"local.subnets",
+												],
+											},
+											"mode":                "managed",
+											"name":                "subnetwork",
+											"provider_config_key": "google",
+											"schema_version":      0,
+											"type":                "google_compute_subnetwork",
+										},
+									],
+									"variables": {
+										"network_name": {
+											"description": "The name of the network where subnets will be created",
+										},
+										"project_id": {
+											"description": "The ID of the project where subnets will be created",
+										},
+										"secondary_ranges": {
+											"default":     {},
+											"description": "Secondary ranges that will be used in some of the subnets",
+										},
+										"subnets": {
+											"description": "The list of subnets being created",
+										},
+									},
+								},
+								"source": "./modules/subnets",
+							},
+							"vpc": {
+								"expressions": {
+									"auto_create_subnetworks": {
+										"references": [
+											"var.auto_create_subnetworks",
+										],
+									},
+									"delete_default_internet_gateway_routes": {
+										"references": [
+											"var.delete_default_internet_gateway_routes",
+										],
+									},
+									"description": {
+										"references": [
+											"var.description",
+										],
+									},
+									"mtu": {
+										"references": [
+											"var.mtu",
+										],
+									},
+									"network_name": {
+										"references": [
+											"var.network_name",
+										],
+									},
+									"project_id": {
+										"references": [
+											"var.project_id",
+										],
+									},
+									"routing_mode": {
+										"references": [
+											"var.routing_mode",
+										],
+									},
+									"shared_vpc_host": {
+										"references": [
+											"var.shared_vpc_host",
+										],
+									},
+								},
+								"module": {
+									"outputs": {
+										"network": {
+											"description": "The VPC resource being created",
+											"expression": {
+												"references": [
+													"google_compute_network.network",
+												],
+											},
+										},
+										"network_id": {
+											"description": "The ID of the VPC being created",
+											"expression": {
+												"references": [
+													"google_compute_network.network.id",
+													"google_compute_network.network",
+												],
+											},
+										},
+										"network_name": {
+											"description": "The name of the VPC being created",
+											"expression": {
+												"references": [
+													"google_compute_network.network.name",
+													"google_compute_network.network",
+												],
+											},
+										},
+										"network_self_link": {
+											"description": "The URI of the VPC being created",
+											"expression": {
+												"references": [
+													"google_compute_network.network.self_link",
+													"google_compute_network.network",
+												],
+											},
+										},
+										"project_id": {
+											"description": "VPC project id",
+											"expression": {
+												"references": [
+													"var.shared_vpc_host",
+													"google_compute_shared_vpc_host_project.shared_vpc_host",
+													"google_compute_shared_vpc_host_project.shared_vpc_host",
+													"google_compute_network.network.project",
+													"google_compute_network.network",
+												],
+											},
+										},
+									},
+									"resources": [
+										{
+											"address": "google_compute_network.network",
+											"expressions": {
+												"auto_create_subnetworks": {
+													"references": [
+														"var.auto_create_subnetworks",
+													],
+												},
+												"delete_default_routes_on_create": {
+													"references": [
+														"var.delete_default_internet_gateway_routes",
+													],
+												},
+												"description": {
+													"references": [
+														"var.description",
+													],
+												},
+												"mtu": {
+													"references": [
+														"var.mtu",
+													],
+												},
+												"name": {
+													"references": [
+														"var.network_name",
+													],
+												},
+												"project": {
+													"references": [
+														"var.project_id",
+													],
+												},
+												"routing_mode": {
+													"references": [
+														"var.routing_mode",
+													],
+												},
+											},
+											"mode":                "managed",
+											"name":                "network",
+											"provider_config_key": "google",
+											"schema_version":      0,
+											"type":                "google_compute_network",
+										},
+										{
+											"address": "google_compute_shared_vpc_host_project.shared_vpc_host",
+											"count_expression": {
+												"references": [
+													"var.shared_vpc_host",
+												],
+											},
+											"depends_on": [
+												"google_compute_network.network",
+											],
+											"expressions": {
+												"project": {
+													"references": [
+														"var.project_id",
+													],
+												},
+											},
+											"mode":                "managed",
+											"name":                "shared_vpc_host",
+											"provider_config_key": "google-beta",
+											"schema_version":      0,
+											"type":                "google_compute_shared_vpc_host_project",
+										},
+									],
+									"variables": {
+										"auto_create_subnetworks": {
+											"default":     false,
+											"description": "When set to true, the network is created in 'auto subnet mode' and it will create a subnet for each region automatically across the 10.128.0.0/9 address range. When set to false, the network is created in 'custom subnet mode' so the user can explicitly connect subnetwork resources.",
+										},
+										"delete_default_internet_gateway_routes": {
+											"default":     false,
+											"description": "If set, ensure that all routes within the network specified whose names begin with 'default-route' and with a next hop of 'default-internet-gateway' are deleted",
+										},
+										"description": {
+											"default":     "",
+											"description": "An optional description of this resource. The resource must be recreated to modify this field.",
+										},
+										"mtu": {
+											"default":     0,
+											"description": "The network MTU. Must be a value between 1460 and 1500 inclusive. If set to 0 (meaning MTU is unset), the network will default to 1460 automatically.",
+										},
+										"network_name": {
+											"description": "The name of the network being created",
+										},
+										"project_id": {
+											"description": "The ID of the project where this VPC will be created",
+										},
+										"routing_mode": {
+											"default":     "GLOBAL",
+											"description": "The network routing mode (default 'GLOBAL')",
+										},
+										"shared_vpc_host": {
+											"default":     false,
+											"description": "Makes this project a Shared VPC host if 'true' (default 'false')",
+										},
+									},
+								},
+								"source": "./modules/vpc",
+							},
+						},
+						"outputs": {
+							"network": {
+								"description": "The created network",
+								"expression": {
+									"references": [
+										"module.vpc",
+									],
+								},
+							},
+							"network_id": {
+								"description": "The ID of the VPC being created",
+								"expression": {
+									"references": [
+										"module.vpc.network_id",
+										"module.vpc",
+									],
+								},
+							},
+							"network_name": {
+								"description": "The name of the VPC being created",
+								"expression": {
+									"references": [
+										"module.vpc.network_name",
+										"module.vpc",
+									],
+								},
+							},
+							"network_self_link": {
+								"description": "The URI of the VPC being created",
+								"expression": {
+									"references": [
+										"module.vpc.network_self_link",
+										"module.vpc",
+									],
+								},
+							},
+							"project_id": {
+								"description": "VPC project id",
+								"expression": {
+									"references": [
+										"module.vpc.project_id",
+										"module.vpc",
+									],
+								},
+							},
+							"route_names": {
+								"description": "The route names associated with this VPC",
+								"expression": {
+									"references": [
+										"module.routes.routes",
+										"module.routes",
+									],
+								},
+							},
+							"subnets": {
+								"description": "A map with keys of form subnet_region/subnet_name and values being the outputs of the google_compute_subnetwork resources used to create corresponding subnets.",
+								"expression": {
+									"references": [
+										"module.subnets.subnets",
+										"module.subnets",
+									],
+								},
+							},
+							"subnets_flow_logs": {
+								"description": "Whether the subnets will have VPC flow logs enabled",
+								"expression": {
+									"references": [
+										"module.subnets.subnets",
+										"module.subnets",
+									],
+								},
+							},
+							"subnets_ids": {
+								"description": "The IDs of the subnets being created",
+								"expression": {
+									"references": [
+										"module.subnets.subnets",
+										"module.subnets",
+									],
+								},
+							},
+							"subnets_ips": {
+								"description": "The IPs and CIDRs of the subnets being created",
+								"expression": {
+									"references": [
+										"module.subnets.subnets",
+										"module.subnets",
+									],
+								},
+							},
+							"subnets_names": {
+								"description": "The names of the subnets being created",
+								"expression": {
+									"references": [
+										"module.subnets.subnets",
+										"module.subnets",
+									],
+								},
+							},
+							"subnets_private_access": {
+								"description": "Whether the subnets will have access to Google API's without a public IP",
+								"expression": {
+									"references": [
+										"module.subnets.subnets",
+										"module.subnets",
+									],
+								},
+							},
+							"subnets_regions": {
+								"description": "The region where the subnets will be created",
+								"expression": {
+									"references": [
+										"module.subnets.subnets",
+										"module.subnets",
+									],
+								},
+							},
+							"subnets_secondary_ranges": {
+								"description": "The secondary ranges associated with these subnets",
+								"expression": {
+									"references": [
+										"module.subnets.subnets",
+										"module.subnets",
+									],
+								},
+							},
+							"subnets_self_links": {
+								"description": "The self-links of subnets being created",
+								"expression": {
+									"references": [
+										"module.subnets.subnets",
+										"module.subnets",
+									],
+								},
+							},
+						},
+						"variables": {
+							"auto_create_subnetworks": {
+								"default":     false,
+								"description": "When set to true, the network is created in 'auto subnet mode' and it will create a subnet for each region automatically across the 10.128.0.0/9 address range. When set to false, the network is created in 'custom subnet mode' so the user can explicitly connect subnetwork resources.",
+							},
+							"delete_default_internet_gateway_routes": {
+								"default":     false,
+								"description": "If set, ensure that all routes within the network specified whose names begin with 'default-route' and with a next hop of 'default-internet-gateway' are deleted",
+							},
+							"description": {
+								"default":     "",
+								"description": "An optional description of this resource. The resource must be recreated to modify this field.",
+							},
+							"firewall_rules": {
+								"default":     [],
+								"description": "List of firewall rules",
+							},
+							"mtu": {
+								"default":     0,
+								"description": "The network MTU. Must be a value between 1460 and 1500 inclusive. If set to 0 (meaning MTU is unset), the network will default to 1460 automatically.",
+							},
+							"network_name": {
+								"description": "The name of the network being created",
+							},
+							"project_id": {
+								"description": "The ID of the project where this VPC will be created",
+							},
+							"routes": {
+								"default":     [],
+								"description": "List of routes being created in this VPC",
+							},
+							"routing_mode": {
+								"default":     "GLOBAL",
+								"description": "The network routing mode (default 'GLOBAL')",
+							},
+							"secondary_ranges": {
+								"default":     {},
+								"description": "Secondary ranges that will be used in some of the subnets",
+							},
+							"shared_vpc_host": {
+								"default":     false,
+								"description": "Makes this project a Shared VPC host if 'true' (default 'false')",
+							},
+							"subnets": {
+								"description": "The list of subnets being created",
+							},
+						},
+					},
+					"source":             "terraform-google-modules/network/google",
+					"version_constraint": "~> 4.0.1",
+				},
+			},
+			"resources": [
+				{
+					"address":             "null_resource.create_file",
+					"mode":                "managed",
+					"name":                "create_file",
+					"provider_config_key": "null",
+					"provisioners": [
+						{
+							"expressions": {
+								"command": {
+									"constant_value": "echo 'this is my first test' > foobar",
+								},
+							},
+							"type": "local-exec",
+						},
+					],
+					"schema_version": 0,
+					"type":           "null_resource",
+				},
+			],
+		},
+	},
+	"format_version": "1.1",
+	"planned_values": {
+		"root_module": {
+			"child_modules": [
+				{
+					"address": "module.test-vpc-module",
+					"child_modules": [
+						{
+							"address": "module.test-vpc-module.module.vpc",
+							"resources": [
+								{
+									"address":          "module.test-vpc-module.module.vpc.google_compute_network.network",
+									"mode":             "managed",
+									"name":             "network",
+									"provider_name":    "registry.terraform.io/hashicorp/google",
+									"schema_version":   0,
+									"sensitive_values": {},
+									"type":             "google_compute_network",
+									"values": {
+										"auto_create_subnetworks":         false,
+										"delete_default_routes_on_create": false,
+										"description":                     "",
+										"enable_ula_internal_ipv6":        null,
+										"mtu":          1460,
+										"name":         "my-custom-mode-network",
+										"project":      "lucky-apparatus-366518",
+										"routing_mode": "GLOBAL",
+										"timeouts":     null,
+									},
+								},
+							],
+						},
+						{
+							"address": "module.test-vpc-module.module.subnets",
+							"resources": [
+								{
+									"address":        "module.test-vpc-module.module.subnets.google_compute_subnetwork.subnetwork[\"us-west1/subnet-001\"]",
+									"index":          "us-west1/subnet-001",
+									"mode":           "managed",
+									"name":           "subnetwork",
+									"provider_name":  "registry.terraform.io/hashicorp/google",
+									"schema_version": 0,
+									"sensitive_values": {
+										"log_config":         [],
+										"secondary_ip_range": [],
+									},
+									"type": "google_compute_subnetwork",
+									"values": {
+										"description":              null,
+										"ip_cidr_range":            "10.10.10.0/24",
+										"ipv6_access_type":         null,
+										"log_config":               [],
+										"name":                     "subnet-001",
+										"network":                  "my-custom-mode-network",
+										"private_ip_google_access": false,
+										"project":                  "lucky-apparatus-366518",
+										"region":                   "us-west1",
+										"role":                     null,
+										"secondary_ip_range":       [],
+										"timeouts":                 null,
+									},
+								},
+								{
+									"address":        "module.test-vpc-module.module.subnets.google_compute_subnetwork.subnetwork[\"us-west1/subnet-002\"]",
+									"index":          "us-west1/subnet-002",
+									"mode":           "managed",
+									"name":           "subnetwork",
+									"provider_name":  "registry.terraform.io/hashicorp/google",
+									"schema_version": 0,
+									"sensitive_values": {
+										"log_config": [
+											{},
+										],
+										"secondary_ip_range": [],
+									},
+									"type": "google_compute_subnetwork",
+									"values": {
+										"description":      null,
+										"ip_cidr_range":    "10.10.20.0/24",
+										"ipv6_access_type": null,
+										"log_config": [
+											{
+												"aggregation_interval": "INTERVAL_5_SEC",
+												"filter_expr":          "true",
+												"flow_sampling":        0.5,
+												"metadata":             "INCLUDE_ALL_METADATA",
+												"metadata_fields":      null,
+											},
+										],
+										"name":                     "subnet-002",
+										"network":                  "my-custom-mode-network",
+										"private_ip_google_access": true,
+										"project":                  "lucky-apparatus-366518",
+										"region":                   "us-west1",
+										"role":                     null,
+										"secondary_ip_range":       [],
+										"timeouts":                 null,
+									},
+								},
+								{
+									"address":        "module.test-vpc-module.module.subnets.google_compute_subnetwork.subnetwork[\"us-west1/subnet-003\"]",
+									"index":          "us-west1/subnet-003",
+									"mode":           "managed",
+									"name":           "subnetwork",
+									"provider_name":  "registry.terraform.io/hashicorp/google",
+									"schema_version": 0,
+									"sensitive_values": {
+										"log_config": [
+											{},
+										],
+										"secondary_ip_range": [],
+									},
+									"type": "google_compute_subnetwork",
+									"values": {
+										"description":      null,
+										"ip_cidr_range":    "10.10.30.0/24",
+										"ipv6_access_type": null,
+										"log_config": [
+											{
+												"aggregation_interval": "INTERVAL_10_MIN",
+												"filter_expr":          "true",
+												"flow_sampling":        0.7,
+												"metadata":             "INCLUDE_ALL_METADATA",
+												"metadata_fields":      null,
+											},
+										],
+										"name":                     "subnet-003",
+										"network":                  "my-custom-mode-network",
+										"private_ip_google_access": false,
+										"project":                  "lucky-apparatus-366518",
+										"region":                   "us-west1",
+										"role":                     null,
+										"secondary_ip_range":       [],
+										"timeouts":                 null,
+									},
+								},
+							],
+						},
+					],
+				},
+			],
+			"resources": [
+				{
+					"address":          "null_resource.create_file",
+					"mode":             "managed",
+					"name":             "create_file",
+					"provider_name":    "registry.terraform.io/hashicorp/null",
+					"schema_version":   0,
+					"sensitive_values": {},
+					"type":             "null_resource",
+					"values": {
+						"triggers": null,
+					},
+				},
+			],
+		},
+	},
+	"relevant_attributes": [
+		{
+			"attribute": [
+				"project",
+			],
+			"resource": "module.test-vpc-module.module.vpc.google_compute_network.network",
+		},
+		{
+			"attribute": [],
+			"resource":  "module.test-vpc-module.module.subnets.google_compute_subnetwork.subnetwork",
+		},
+		{
+			"attribute": [
+				"name",
+			],
+			"resource": "module.test-vpc-module.module.vpc.google_compute_network.network",
+		},
+		{
+			"attribute": [
+				"id",
+			],
+			"resource": "module.test-vpc-module.module.vpc.google_compute_network.network",
+		},
+		{
+			"attribute": [],
+			"resource":  "module.test-vpc-module.module.vpc.google_compute_shared_vpc_host_project.shared_vpc_host",
+		},
+		{
+			"attribute": [],
+			"resource":  "module.test-vpc-module.module.routes.google_compute_route.route",
+		},
+		{
+			"attribute": [],
+			"resource":  "module.test-vpc-module.module.vpc.google_compute_network.network",
+		},
+		{
+			"attribute": [
+				"self_link",
+			],
+			"resource": "module.test-vpc-module.module.vpc.google_compute_network.network",
+		},
+		{
+			"attribute": [],
+			"resource":  "module.test-vpc-module.module.firewall_rules.google_compute_firewall.rules",
+		},
+	],
+	"resource_changes": [
+		{
+			"address": "module.test-vpc-module.module.subnets.google_compute_subnetwork.subnetwork[\"us-west1/subnet-001\"]",
+			"change": {
+				"actions": [
+					"create",
+				],
+				"after": {
+					"description":              null,
+					"ip_cidr_range":            "10.10.10.0/24",
+					"ipv6_access_type":         null,
+					"log_config":               [],
+					"name":                     "subnet-001",
+					"network":                  "my-custom-mode-network",
+					"private_ip_google_access": false,
+					"project":                  "lucky-apparatus-366518",
+					"region":                   "us-west1",
+					"role":                     null,
+					"secondary_ip_range":       [],
+					"timeouts":                 null,
+				},
+				"after_sensitive": {
+					"log_config":         [],
+					"secondary_ip_range": [],
+				},
+				"after_unknown": {
+					"creation_timestamp":         true,
+					"external_ipv6_prefix":       true,
+					"fingerprint":                true,
+					"gateway_address":            true,
+					"id":                         true,
+					"ipv6_cidr_range":            true,
+					"log_config":                 [],
+					"private_ipv6_google_access": true,
+					"purpose":                    true,
+					"secondary_ip_range":         [],
+					"self_link":                  true,
+					"stack_type":                 true,
+				},
+				"before":           null,
+				"before_sensitive": false,
+			},
+			"index":          "us-west1/subnet-001",
+			"mode":           "managed",
+			"module_address": "module.test-vpc-module.module.subnets",
+			"name":           "subnetwork",
+			"provider_name":  "registry.terraform.io/hashicorp/google",
+			"type":           "google_compute_subnetwork",
+		},
+		{
+			"address": "module.test-vpc-module.module.subnets.google_compute_subnetwork.subnetwork[\"us-west1/subnet-002\"]",
+			"change": {
+				"actions": [
+					"create",
+				],
+				"after": {
+					"description":      null,
+					"ip_cidr_range":    "10.10.20.0/24",
+					"ipv6_access_type": null,
+					"log_config": [
+						{
+							"aggregation_interval": "INTERVAL_5_SEC",
+							"filter_expr":          "true",
+							"flow_sampling":        0.5,
+							"metadata":             "INCLUDE_ALL_METADATA",
+							"metadata_fields":      null,
+						},
+					],
+					"name":                     "subnet-002",
+					"network":                  "my-custom-mode-network",
+					"private_ip_google_access": true,
+					"project":                  "lucky-apparatus-366518",
+					"region":                   "us-west1",
+					"role":                     null,
+					"secondary_ip_range":       [],
+					"timeouts":                 null,
+				},
+				"after_sensitive": {
+					"log_config": [
+						{},
+					],
+					"secondary_ip_range": [],
+				},
+				"after_unknown": {
+					"creation_timestamp":   true,
+					"external_ipv6_prefix": true,
+					"fingerprint":          true,
+					"gateway_address":      true,
+					"id":                   true,
+					"ipv6_cidr_range":      true,
+					"log_config": [
+						{},
+					],
+					"private_ipv6_google_access": true,
+					"purpose":                    true,
+					"secondary_ip_range":         [],
+					"self_link":                  true,
+					"stack_type":                 true,
+				},
+				"before":           null,
+				"before_sensitive": false,
+			},
+			"index":          "us-west1/subnet-002",
+			"mode":           "managed",
+			"module_address": "module.test-vpc-module.module.subnets",
+			"name":           "subnetwork",
+			"provider_name":  "registry.terraform.io/hashicorp/google",
+			"type":           "google_compute_subnetwork",
+		},
+		{
+			"address": "module.test-vpc-module.module.subnets.google_compute_subnetwork.subnetwork[\"us-west1/subnet-003\"]",
+			"change": {
+				"actions": [
+					"create",
+				],
+				"after": {
+					"description":      null,
+					"ip_cidr_range":    "10.10.30.0/24",
+					"ipv6_access_type": null,
+					"log_config": [
+						{
+							"aggregation_interval": "INTERVAL_10_MIN",
+							"filter_expr":          "true",
+							"flow_sampling":        0.7,
+							"metadata":             "INCLUDE_ALL_METADATA",
+							"metadata_fields":      null,
+						},
+					],
+					"name":                     "subnet-003",
+					"network":                  "my-custom-mode-network",
+					"private_ip_google_access": false,
+					"project":                  "lucky-apparatus-366518",
+					"region":                   "us-west1",
+					"role":                     null,
+					"secondary_ip_range":       [],
+					"timeouts":                 null,
+				},
+				"after_sensitive": {
+					"log_config": [
+						{},
+					],
+					"secondary_ip_range": [],
+				},
+				"after_unknown": {
+					"creation_timestamp":   true,
+					"external_ipv6_prefix": true,
+					"fingerprint":          true,
+					"gateway_address":      true,
+					"id":                   true,
+					"ipv6_cidr_range":      true,
+					"log_config": [
+						{},
+					],
+					"private_ipv6_google_access": true,
+					"purpose":                    true,
+					"secondary_ip_range":         [],
+					"self_link":                  true,
+					"stack_type":                 true,
+				},
+				"before":           null,
+				"before_sensitive": false,
+			},
+			"index":          "us-west1/subnet-003",
+			"mode":           "managed",
+			"module_address": "module.test-vpc-module.module.subnets",
+			"name":           "subnetwork",
+			"provider_name":  "registry.terraform.io/hashicorp/google",
+			"type":           "google_compute_subnetwork",
+		},
+		{
+			"address": "module.test-vpc-module.module.vpc.google_compute_network.network",
+			"change": {
+				"actions": [
+					"create",
+				],
+				"after": {
+					"auto_create_subnetworks":         false,
+					"delete_default_routes_on_create": false,
+					"description":                     "",
+					"enable_ula_internal_ipv6":        null,
+					"mtu":          1460,
+					"name":         "my-custom-mode-network",
+					"project":      "lucky-apparatus-366518",
+					"routing_mode": "GLOBAL",
+					"timeouts":     null,
+				},
+				"after_sensitive": {},
+				"after_unknown": {
+					"gateway_ipv4": true,
+					"id":           true,
+					"internal_ipv6_range": true,
+					"self_link":           true,
+				},
+				"before":           null,
+				"before_sensitive": false,
+			},
+			"mode":           "managed",
+			"module_address": "module.test-vpc-module.module.vpc",
+			"name":           "network",
+			"provider_name":  "registry.terraform.io/hashicorp/google",
+			"type":           "google_compute_network",
+		},
+		{
+			"address": "null_resource.create_file",
+			"change": {
+				"actions": [
+					"create",
+				],
+				"after": {
+					"triggers": null,
+				},
+				"after_sensitive": {},
+				"after_unknown": {
+					"id": true,
+				},
+				"before":           null,
+				"before_sensitive": false,
+			},
+			"mode":          "managed",
+			"name":          "create_file",
+			"provider_name": "registry.terraform.io/hashicorp/null",
+			"type":          "null_resource",
+		},
+	],
+	"terraform_version": "1.3.3",
+}

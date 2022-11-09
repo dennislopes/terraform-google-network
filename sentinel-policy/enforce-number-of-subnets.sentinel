@@ -1,0 +1,12 @@
+# Import common-functions/tfplan-functions/tfplan-functions.sentinel
+# with alias "plan"
+
+import "mira-functions" as mira
+import "tfplan-functions" as tfplan
+
+resources_by_google_provider = mira.find_resources("google_compute_subnetwork")
+result = mira.check_number_of_networks (resources_by_google_provider, "composer-node-primary", true)
+
+main = rule {
+	result
+	}
