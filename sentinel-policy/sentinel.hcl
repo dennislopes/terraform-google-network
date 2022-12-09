@@ -24,6 +24,11 @@ policy "enforce-number-of-subnets" {
     enforcement_level = "advisory"
 }
 
+policy "enforce-number-of-subnets" {
+    source = "./enforce-something.sentinel"
+    enforcement_level = "advisory"
+}
+
 policy "restrict-egress-firewall-destination-ranges" {
     source = "./restrict-egress-firewall-destination-ranges.sentinel"
     enforcement_level = "advisory"

@@ -1,13 +1,88 @@
 terraform_version = "1.3.3"
 
 planned_values = {
-	"outputs": {},
+	"outputs": {
+		"network_name": {
+			"name":      "network_name",
+			"sensitive": false,
+			"value":     "my-custom-mode-network",
+		},
+		"network_self_link": {
+			"name":      "network_self_link",
+			"sensitive": false,
+			"value":     undefined,
+		},
+		"project_id": {
+			"name":      "project_id",
+			"sensitive": false,
+			"value":     "lucky-apparatus-366518",
+		},
+		"route_names": {
+			"name":      "route_names",
+			"sensitive": false,
+			"value":     [],
+		},
+		"subnets_flow_logs": {
+			"name":      "subnets_flow_logs",
+			"sensitive": false,
+			"value": [
+				false,
+				true,
+				true,
+			],
+		},
+		"subnets_ips": {
+			"name":      "subnets_ips",
+			"sensitive": false,
+			"value": [
+				"10.10.10.0/24",
+				"10.10.20.0/24",
+				"10.10.30.0/24",
+			],
+		},
+		"subnets_names": {
+			"name":      "subnets_names",
+			"sensitive": false,
+			"value": [
+				"subnet-01",
+				"subnet-02",
+				"subnet-03",
+			],
+		},
+		"subnets_private_access": {
+			"name":      "subnets_private_access",
+			"sensitive": false,
+			"value": [
+				false,
+				true,
+				false,
+			],
+		},
+		"subnets_regions": {
+			"name":      "subnets_regions",
+			"sensitive": false,
+			"value": [
+				"us-west1",
+				"us-west1",
+				"us-west1",
+			],
+		},
+		"subnets_secondary_ranges": {
+			"name":      "subnets_secondary_ranges",
+			"sensitive": false,
+			"value": [
+				[],
+				[],
+				[],
+			],
+		},
+	},
 	"resources": {
-		"module.test-vpc-module.module.subnets.google_compute_subnetwork.subnetwork[\"us-west1/subnet-001\"]": {
-			"address":        "module.test-vpc-module.module.subnets.google_compute_subnetwork.subnetwork[\"us-west1/subnet-001\"]",
+		"module.test-vpc-module.module.subnets.google_compute_subnetwork.subnetwork[\"us-west1/subnet-01\"]": {
+			"address":        "module.test-vpc-module.module.subnets.google_compute_subnetwork.subnetwork[\"us-west1/subnet-01\"]",
 			"depends_on":     [],
 			"deposed_key":    "",
-			"index":          "us-west1/subnet-001",
+			"index":          "us-west1/subnet-01",
 			"mode":           "managed",
 			"module_address": "module.test-vpc-module.module.subnets",
 			"name":           "subnetwork",
@@ -19,7 +94,7 @@ planned_values = {
 				"ip_cidr_range":            "10.10.10.0/24",
 				"ipv6_access_type":         null,
 				"log_config":               [],
-				"name":                     "subnet-001",
+				"name":                     "subnet-01",
 				"network":                  "my-custom-mode-network",
 				"private_ip_google_access": false,
 				"project":                  "lucky-apparatus-366518",
@@ -29,11 +104,11 @@ planned_values = {
 				"timeouts":                 null,
 			},
 		},
-		"module.test-vpc-module.module.subnets.google_compute_subnetwork.subnetwork[\"us-west1/subnet-002\"]": {
-			"address":        "module.test-vpc-module.module.subnets.google_compute_subnetwork.subnetwork[\"us-west1/subnet-002\"]",
+		"module.test-vpc-module.module.subnets.google_compute_subnetwork.subnetwork[\"us-west1/subnet-02\"]": {
+			"address":        "module.test-vpc-module.module.subnets.google_compute_subnetwork.subnetwork[\"us-west1/subnet-02\"]",
 			"depends_on":     [],
 			"deposed_key":    "",
-			"index":          "us-west1/subnet-002",
+			"index":          "us-west1/subnet-02",
 			"mode":           "managed",
 			"module_address": "module.test-vpc-module.module.subnets",
 			"name":           "subnetwork",
@@ -53,7 +128,7 @@ planned_values = {
 						"metadata_fields":      null,
 					},
 				],
-				"name":                     "subnet-002",
+				"name":                     "subnet-02",
 				"network":                  "my-custom-mode-network",
 				"private_ip_google_access": true,
 				"project":                  "lucky-apparatus-366518",
@@ -63,11 +138,11 @@ planned_values = {
 				"timeouts":                 null,
 			},
 		},
-		"module.test-vpc-module.module.subnets.google_compute_subnetwork.subnetwork[\"us-west1/subnet-003\"]": {
-			"address":        "module.test-vpc-module.module.subnets.google_compute_subnetwork.subnetwork[\"us-west1/subnet-003\"]",
+		"module.test-vpc-module.module.subnets.google_compute_subnetwork.subnetwork[\"us-west1/subnet-03\"]": {
+			"address":        "module.test-vpc-module.module.subnets.google_compute_subnetwork.subnetwork[\"us-west1/subnet-03\"]",
 			"depends_on":     [],
 			"deposed_key":    "",
-			"index":          "us-west1/subnet-003",
+			"index":          "us-west1/subnet-03",
 			"mode":           "managed",
 			"module_address": "module.test-vpc-module.module.subnets",
 			"name":           "subnetwork",
@@ -81,13 +156,13 @@ planned_values = {
 				"log_config": [
 					{
 						"aggregation_interval": "INTERVAL_10_MIN",
-						"filter_expr":          "true",
+						"filter_expr":          "false",
 						"flow_sampling":        0.7,
 						"metadata":             "INCLUDE_ALL_METADATA",
 						"metadata_fields":      null,
 					},
 				],
-				"name":                     "subnet-003",
+				"name":                     "subnet-03",
 				"network":                  "my-custom-mode-network",
 				"private_ip_google_access": false,
 				"project":                  "lucky-apparatus-366518",
@@ -120,29 +195,19 @@ planned_values = {
 				"timeouts":     null,
 			},
 		},
-		"null_resource.create_file": {
-			"address":        "null_resource.create_file",
-			"depends_on":     [],
-			"deposed_key":    "",
-			"index":          null,
-			"mode":           "managed",
-			"module_address": "",
-			"name":           "create_file",
-			"provider_name":  "registry.terraform.io/hashicorp/null",
-			"tainted":        false,
-			"type":           "null_resource",
-			"values": {
-				"triggers": null,
-			},
-		},
 	},
 }
 
-variables = {}
+variables = {
+	"project_id": {
+		"name":  "project_id",
+		"value": "lucky-apparatus-366518",
+	},
+}
 
 resource_changes = {
-	"module.test-vpc-module.module.subnets.google_compute_subnetwork.subnetwork[\"us-west1/subnet-001\"]": {
-		"address": "module.test-vpc-module.module.subnets.google_compute_subnetwork.subnetwork[\"us-west1/subnet-001\"]",
+	"module.test-vpc-module.module.subnets.google_compute_subnetwork.subnetwork[\"us-west1/subnet-01\"]": {
+		"address": "module.test-vpc-module.module.subnets.google_compute_subnetwork.subnetwork[\"us-west1/subnet-01\"]",
 		"change": {
 			"actions": [
 				"create",
@@ -152,9 +217,9 @@ resource_changes = {
 				"ip_cidr_range":            "10.10.10.0/24",
 				"ipv6_access_type":         null,
 				"log_config":               [],
-				"name":                     "subnet-001",
-				"network":                  "my-custom-mode-network",
+				"name":                     "subnet-01",
 				"network_type":             "composer-node-primary",
+				"network":                  "my-custom-mode-network",
 				"private_ip_google_access": false,
 				"project":                  "lucky-apparatus-366518",
 				"region":                   "us-west1",
@@ -179,15 +244,15 @@ resource_changes = {
 			"before": null,
 		},
 		"deposed":        "",
-		"index":          "us-west1/subnet-001",
+		"index":          "us-west1/subnet-01",
 		"mode":           "managed",
 		"module_address": "module.test-vpc-module.module.subnets",
 		"name":           "subnetwork",
 		"provider_name":  "registry.terraform.io/hashicorp/google",
 		"type":           "google_compute_subnetwork",
 	},
-	"module.test-vpc-module.module.subnets.google_compute_subnetwork.subnetwork[\"us-west1/subnet-002\"]": {
-		"address": "module.test-vpc-module.module.subnets.google_compute_subnetwork.subnetwork[\"us-west1/subnet-002\"]",
+	"module.test-vpc-module.module.subnets.google_compute_subnetwork.subnetwork[\"us-west1/subnet-02\"]": {
+		"address": "module.test-vpc-module.module.subnets.google_compute_subnetwork.subnetwork[\"us-west1/subnet-02\"]",
 		"change": {
 			"actions": [
 				"create",
@@ -205,9 +270,9 @@ resource_changes = {
 						"metadata_fields":      null,
 					},
 				],
-				"name":                     "subnet-002",
-				"network":                  "my-custom-mode-network",
+				"name":                     "subnet-02",
 				"network_type":             "composer-node-primary",
+				"network":                  "my-custom-mode-network",
 				"private_ip_google_access": true,
 				"project":                  "lucky-apparatus-366518",
 				"region":                   "us-west1",
@@ -234,15 +299,15 @@ resource_changes = {
 			"before": null,
 		},
 		"deposed":        "",
-		"index":          "us-west1/subnet-002",
+		"index":          "us-west1/subnet-02",
 		"mode":           "managed",
 		"module_address": "module.test-vpc-module.module.subnets",
 		"name":           "subnetwork",
 		"provider_name":  "registry.terraform.io/hashicorp/google",
 		"type":           "google_compute_subnetwork",
 	},
-	"module.test-vpc-module.module.subnets.google_compute_subnetwork.subnetwork[\"us-west1/subnet-003\"]": {
-		"address": "module.test-vpc-module.module.subnets.google_compute_subnetwork.subnetwork[\"us-west1/subnet-003\"]",
+	"module.test-vpc-module.module.subnets.google_compute_subnetwork.subnetwork[\"us-west1/subnet-03\"]": {
+		"address": "module.test-vpc-module.module.subnets.google_compute_subnetwork.subnetwork[\"us-west1/subnet-03\"]",
 		"change": {
 			"actions": [
 				"create",
@@ -254,13 +319,14 @@ resource_changes = {
 				"log_config": [
 					{
 						"aggregation_interval": "INTERVAL_10_MIN",
-						"filter_expr":          "true",
+						"filter_expr":          "false",
 						"flow_sampling":        0.7,
 						"metadata":             "INCLUDE_ALL_METADATA",
 						"metadata_fields":      null,
 					},
 				],
-				"name":                     "subnet-003",
+				"name":                     "subnet-03",
+				"network_type":              "composer-node-primary",
 				"network":                  "my-custom-mode-network",
 				"private_ip_google_access": false,
 				"project":                  "lucky-apparatus-366518",
@@ -288,7 +354,7 @@ resource_changes = {
 			"before": null,
 		},
 		"deposed":        "",
-		"index":          "us-west1/subnet-003",
+		"index":          "us-west1/subnet-03",
 		"mode":           "managed",
 		"module_address": "module.test-vpc-module.module.subnets",
 		"name":           "subnetwork",
@@ -328,31 +394,144 @@ resource_changes = {
 		"provider_name":  "registry.terraform.io/hashicorp/google",
 		"type":           "google_compute_network",
 	},
-	"null_resource.create_file": {
-		"address": "null_resource.create_file",
+}
+
+output_changes = {
+	"network_name": {
 		"change": {
 			"actions": [
 				"create",
 			],
-			"after": {
-				"triggers": null,
-			},
-			"after_unknown": {
-				"id": true,
-			},
-			"before": null,
+			"after":         "my-custom-mode-network",
+			"after_unknown": false,
+			"before":        null,
 		},
-		"deposed":        "",
-		"index":          null,
-		"mode":           "managed",
-		"module_address": "",
-		"name":           "create_file",
-		"provider_name":  "registry.terraform.io/hashicorp/null",
-		"type":           "null_resource",
+		"name": "network_name",
+	},
+	"network_self_link": {
+		"change": {
+			"actions": [
+				"create",
+			],
+			"after":         undefined,
+			"after_unknown": true,
+			"before":        null,
+		},
+		"name": "network_self_link",
+	},
+	"project_id": {
+		"change": {
+			"actions": [
+				"create",
+			],
+			"after":         "lucky-apparatus-366518",
+			"after_unknown": false,
+			"before":        null,
+		},
+		"name": "project_id",
+	},
+	"route_names": {
+		"change": {
+			"actions": [
+				"create",
+			],
+			"after":         [],
+			"after_unknown": false,
+			"before":        null,
+		},
+		"name": "route_names",
+	},
+	"subnets_flow_logs": {
+		"change": {
+			"actions": [
+				"create",
+			],
+			"after": [
+				false,
+				true,
+				true,
+			],
+			"after_unknown": false,
+			"before":        null,
+		},
+		"name": "subnets_flow_logs",
+	},
+	"subnets_ips": {
+		"change": {
+			"actions": [
+				"create",
+			],
+			"after": [
+				"10.10.10.0/24",
+				"10.10.20.0/24",
+				"10.10.30.0/24",
+			],
+			"after_unknown": false,
+			"before":        null,
+		},
+		"name": "subnets_ips",
+	},
+	"subnets_names": {
+		"change": {
+			"actions": [
+				"create",
+			],
+			"after": [
+				"subnet-01",
+				"subnet-02",
+				"subnet-03",
+			],
+			"after_unknown": false,
+			"before":        null,
+		},
+		"name": "subnets_names",
+	},
+	"subnets_private_access": {
+		"change": {
+			"actions": [
+				"create",
+			],
+			"after": [
+				false,
+				true,
+				false,
+			],
+			"after_unknown": false,
+			"before":        null,
+		},
+		"name": "subnets_private_access",
+	},
+	"subnets_regions": {
+		"change": {
+			"actions": [
+				"create",
+			],
+			"after": [
+				"us-west1",
+				"us-west1",
+				"us-west1",
+			],
+			"after_unknown": false,
+			"before":        null,
+		},
+		"name": "subnets_regions",
+	},
+	"subnets_secondary_ranges": {
+		"change": {
+			"actions": [
+				"create",
+			],
+			"after": [
+				[],
+				[],
+				[],
+			],
+			"after_unknown": false,
+			"before":        null,
+		},
+		"name": "subnets_secondary_ranges",
 	},
 }
-
-output_changes = {}
 
 raw = {
 	"configuration": {
@@ -360,16 +539,18 @@ raw = {
 			"google": {
 				"full_name":          "registry.terraform.io/hashicorp/google",
 				"name":               "google",
-				"version_constraint": ">= 3.83.0, < 5.0.0",
+				"version_constraint": "~> 4.0",
 			},
-			"google-beta": {
+			"module.test-vpc-module:google-beta": {
 				"full_name":          "registry.terraform.io/hashicorp/google-beta",
+				"module_address":     "module.test-vpc-module",
 				"name":               "google-beta",
 				"version_constraint": ">= 3.45.0, < 5.0.0",
 			},
 			"null": {
-				"full_name": "registry.terraform.io/hashicorp/null",
-				"name":      "null",
+				"full_name":          "registry.terraform.io/hashicorp/null",
+				"name":               "null",
+				"version_constraint": "~> 3.0",
 			},
 		},
 		"root_module": {
@@ -383,19 +564,21 @@ raw = {
 							"constant_value": "my-custom-mode-network",
 						},
 						"project_id": {
-							"constant_value": "lucky-apparatus-366518",
+							"references": [
+								"var.project_id",
+							],
 						},
 						"subnets": {
 							"constant_value": [
 								{
 									"subnet_ip":     "10.10.10.0/24",
-									"subnet_name":   "subnet-001",
+									"subnet_name":   "subnet-01",
 									"subnet_region": "us-west1",
 								},
 								{
 									"subnet_flow_logs":      "true",
 									"subnet_ip":             "10.10.20.0/24",
-									"subnet_name":           "subnet-002",
+									"subnet_name":           "subnet-02",
 									"subnet_private_access": "true",
 									"subnet_region":         "us-west1",
 								},
@@ -406,7 +589,7 @@ raw = {
 									"subnet_flow_logs_metadata": "INCLUDE_ALL_METADATA",
 									"subnet_flow_logs_sampling": 0.7,
 									"subnet_ip":                 "10.10.30.0/24",
-									"subnet_name":               "subnet-003",
+									"subnet_name":               "subnet-03",
 									"subnet_region":             "us-west1",
 								},
 							],
@@ -761,9 +944,19 @@ raw = {
 														"var.project_id",
 													],
 												},
+												"purpose": {
+													"references": [
+														"each.value",
+													],
+												},
 												"region": {
 													"references": [
 														"each.value.subnet_region",
+														"each.value",
+													],
+												},
+												"role": {
+													"references": [
 														"each.value",
 													],
 												},
@@ -969,7 +1162,7 @@ raw = {
 											},
 											"mode":                "managed",
 											"name":                "shared_vpc_host",
-											"provider_config_key": "google-beta",
+											"provider_config_key": "module.test-vpc-module:google-beta",
 											"schema_version":      0,
 											"type":                "google_compute_shared_vpc_host_project",
 										},
@@ -989,7 +1182,7 @@ raw = {
 										},
 										"mtu": {
 											"default":     0,
-											"description": "The network MTU. Must be a value between 1460 and 1500 inclusive. If set to 0 (meaning MTU is unset), the network will default to 1460 automatically.",
+											"description": "The network MTU (If set to 0, meaning MTU is unset - defaults to '1460'). Recommended values: 1460 (default for historic reasons), 1500 (Internet default), or 8896 (for Jumbo packets). Allowed are all values in the range 1300 to 8896, inclusively.",
 										},
 										"network_name": {
 											"description": "The name of the network being created",
@@ -1165,7 +1358,7 @@ raw = {
 							},
 							"mtu": {
 								"default":     0,
-								"description": "The network MTU. Must be a value between 1460 and 1500 inclusive. If set to 0 (meaning MTU is unset), the network will default to 1460 automatically.",
+								"description": "The network MTU (If set to 0, meaning MTU is unset - defaults to '1460'). Recommended values: 1460 (default for historic reasons), 1500 (Internet default), or 8896 (for Jumbo packets). Allowed are all values in the range 1300 to 8896, inclusively.",
 							},
 							"network_name": {
 								"description": "The name of the network being created",
@@ -1195,33 +1388,300 @@ raw = {
 						},
 					},
 					"source":             "terraform-google-modules/network/google",
-					"version_constraint": "~> 4.0.1",
+					"version_constraint": "~> 5.2",
 				},
 			},
-			"resources": [
-				{
-					"address":             "null_resource.create_file",
-					"mode":                "managed",
-					"name":                "create_file",
-					"provider_config_key": "null",
-					"provisioners": [
-						{
-							"expressions": {
-								"command": {
-									"constant_value": "echo 'this is my first test' > foobar",
-								},
-							},
-							"type": "local-exec",
-						},
-					],
-					"schema_version": 0,
-					"type":           "null_resource",
+			"outputs": {
+				"network_name": {
+					"description": "The name of the VPC being created",
+					"expression": {
+						"references": [
+							"module.test-vpc-module.network_name",
+							"module.test-vpc-module",
+						],
+					},
 				},
-			],
+				"network_self_link": {
+					"description": "The URI of the VPC being created",
+					"expression": {
+						"references": [
+							"module.test-vpc-module.network_self_link",
+							"module.test-vpc-module",
+						],
+					},
+				},
+				"project_id": {
+					"description": "VPC project id",
+					"expression": {
+						"references": [
+							"module.test-vpc-module.project_id",
+							"module.test-vpc-module",
+						],
+					},
+				},
+				"route_names": {
+					"description": "The routes associated with this VPC",
+					"expression": {
+						"references": [
+							"module.test-vpc-module.route_names",
+							"module.test-vpc-module",
+						],
+					},
+				},
+				"subnets_flow_logs": {
+					"description": "Whether the subnets will have VPC flow logs enabled",
+					"expression": {
+						"references": [
+							"module.test-vpc-module.subnets_flow_logs",
+							"module.test-vpc-module",
+						],
+					},
+				},
+				"subnets_ips": {
+					"description": "The IP and cidrs of the subnets being created",
+					"expression": {
+						"references": [
+							"module.test-vpc-module.subnets_ips",
+							"module.test-vpc-module",
+						],
+					},
+				},
+				"subnets_names": {
+					"description": "The names of the subnets being created",
+					"expression": {
+						"references": [
+							"module.test-vpc-module.subnets_names",
+							"module.test-vpc-module",
+						],
+					},
+				},
+				"subnets_private_access": {
+					"description": "Whether the subnets will have access to Google API's without a public IP",
+					"expression": {
+						"references": [
+							"module.test-vpc-module.subnets_private_access",
+							"module.test-vpc-module",
+						],
+					},
+				},
+				"subnets_regions": {
+					"description": "The region where subnets will be created",
+					"expression": {
+						"references": [
+							"module.test-vpc-module.subnets_regions",
+							"module.test-vpc-module",
+						],
+					},
+				},
+				"subnets_secondary_ranges": {
+					"description": "The secondary ranges associated with these subnets",
+					"expression": {
+						"references": [
+							"module.test-vpc-module.subnets_secondary_ranges",
+							"module.test-vpc-module",
+						],
+					},
+				},
+			},
+			"variables": {
+				"project_id": {
+					"description": "The project ID to host the network in",
+				},
+			},
 		},
 	},
 	"format_version": "1.1",
+	"output_changes": {
+		"network_name": {
+			"actions": [
+				"create",
+			],
+			"after":            "my-custom-mode-network",
+			"after_sensitive":  false,
+			"after_unknown":    false,
+			"before":           null,
+			"before_sensitive": false,
+		},
+		"network_self_link": {
+			"actions": [
+				"create",
+			],
+			"after_sensitive":  false,
+			"after_unknown":    true,
+			"before":           null,
+			"before_sensitive": false,
+		},
+		"project_id": {
+			"actions": [
+				"create",
+			],
+			"after":            "lucky-apparatus-366518",
+			"after_sensitive":  false,
+			"after_unknown":    false,
+			"before":           null,
+			"before_sensitive": false,
+		},
+		"route_names": {
+			"actions": [
+				"create",
+			],
+			"after":            [],
+			"after_sensitive":  false,
+			"after_unknown":    false,
+			"before":           null,
+			"before_sensitive": false,
+		},
+		"subnets_flow_logs": {
+			"actions": [
+				"create",
+			],
+			"after": [
+				false,
+				true,
+				true,
+			],
+			"after_sensitive":  false,
+			"after_unknown":    false,
+			"before":           null,
+			"before_sensitive": false,
+		},
+		"subnets_ips": {
+			"actions": [
+				"create",
+			],
+			"after": [
+				"10.10.10.0/24",
+				"10.10.20.0/24",
+				"10.10.30.0/24",
+			],
+			"after_sensitive":  false,
+			"after_unknown":    false,
+			"before":           null,
+			"before_sensitive": false,
+		},
+		"subnets_names": {
+			"actions": [
+				"create",
+			],
+			"after": [
+				"subnet-01",
+				"subnet-02",
+				"subnet-03",
+			],
+			"after_sensitive":  false,
+			"after_unknown":    false,
+			"before":           null,
+			"before_sensitive": false,
+		},
+		"subnets_private_access": {
+			"actions": [
+				"create",
+			],
+			"after": [
+				false,
+				true,
+				false,
+			],
+			"after_sensitive":  false,
+			"after_unknown":    false,
+			"before":           null,
+			"before_sensitive": false,
+		},
+		"subnets_regions": {
+			"actions": [
+				"create",
+			],
+			"after": [
+				"us-west1",
+				"us-west1",
+				"us-west1",
+			],
+			"after_sensitive":  false,
+			"after_unknown":    false,
+			"before":           null,
+			"before_sensitive": false,
+		},
+		"subnets_secondary_ranges": {
+			"actions": [
+				"create",
+			],
+			"after": [
+				[],
+				[],
+				[],
+			],
+			"after_sensitive":  false,
+			"after_unknown":    false,
+			"before":           null,
+			"before_sensitive": false,
+		},
+	},
 	"planned_values": {
+		"outputs": {
+			"network_name": {
+				"sensitive": false,
+				"value":     "my-custom-mode-network",
+			},
+			"network_self_link": {
+				"sensitive": false,
+			},
+			"project_id": {
+				"sensitive": false,
+				"value":     "lucky-apparatus-366518",
+			},
+			"route_names": {
+				"sensitive": false,
+				"value":     [],
+			},
+			"subnets_flow_logs": {
+				"sensitive": false,
+				"value": [
+					false,
+					true,
+					true,
+				],
+			},
+			"subnets_ips": {
+				"sensitive": false,
+				"value": [
+					"10.10.10.0/24",
+					"10.10.20.0/24",
+					"10.10.30.0/24",
+				],
+			},
+			"subnets_names": {
+				"sensitive": false,
+				"value": [
+					"subnet-01",
+					"subnet-02",
+					"subnet-03",
+				],
+			},
+			"subnets_private_access": {
+				"sensitive": false,
+				"value": [
+					false,
+					true,
+					false,
+				],
+			},
+			"subnets_regions": {
+				"sensitive": false,
+				"value": [
+					"us-west1",
+					"us-west1",
+					"us-west1",
+				],
+			},
+			"subnets_secondary_ranges": {
+				"sensitive": false,
+				"value": [
+					[],
+					[],
+					[],
+				],
+			},
+		},
 		"root_module": {
 			"child_modules": [
 				{
@@ -1256,8 +1716,8 @@ raw = {
 							"address": "module.test-vpc-module.module.subnets",
 							"resources": [
 								{
-									"address":        "module.test-vpc-module.module.subnets.google_compute_subnetwork.subnetwork[\"us-west1/subnet-001\"]",
-									"index":          "us-west1/subnet-001",
+									"address":        "module.test-vpc-module.module.subnets.google_compute_subnetwork.subnetwork[\"us-west1/subnet-01\"]",
+									"index":          "us-west1/subnet-01",
 									"mode":           "managed",
 									"name":           "subnetwork",
 									"provider_name":  "registry.terraform.io/hashicorp/google",
@@ -1272,7 +1732,7 @@ raw = {
 										"ip_cidr_range":            "10.10.10.0/24",
 										"ipv6_access_type":         null,
 										"log_config":               [],
-										"name":                     "subnet-001",
+										"name":                     "subnet-01",
 										"network":                  "my-custom-mode-network",
 										"private_ip_google_access": false,
 										"project":                  "lucky-apparatus-366518",
@@ -1283,8 +1743,8 @@ raw = {
 									},
 								},
 								{
-									"address":        "module.test-vpc-module.module.subnets.google_compute_subnetwork.subnetwork[\"us-west1/subnet-002\"]",
-									"index":          "us-west1/subnet-002",
+									"address":        "module.test-vpc-module.module.subnets.google_compute_subnetwork.subnetwork[\"us-west1/subnet-02\"]",
+									"index":          "us-west1/subnet-02",
 									"mode":           "managed",
 									"name":           "subnetwork",
 									"provider_name":  "registry.terraform.io/hashicorp/google",
@@ -1309,7 +1769,7 @@ raw = {
 												"metadata_fields":      null,
 											},
 										],
-										"name":                     "subnet-002",
+										"name":                     "subnet-02",
 										"network":                  "my-custom-mode-network",
 										"private_ip_google_access": true,
 										"project":                  "lucky-apparatus-366518",
@@ -1320,8 +1780,8 @@ raw = {
 									},
 								},
 								{
-									"address":        "module.test-vpc-module.module.subnets.google_compute_subnetwork.subnetwork[\"us-west1/subnet-003\"]",
-									"index":          "us-west1/subnet-003",
+									"address":        "module.test-vpc-module.module.subnets.google_compute_subnetwork.subnetwork[\"us-west1/subnet-03\"]",
+									"index":          "us-west1/subnet-03",
 									"mode":           "managed",
 									"name":           "subnetwork",
 									"provider_name":  "registry.terraform.io/hashicorp/google",
@@ -1340,13 +1800,13 @@ raw = {
 										"log_config": [
 											{
 												"aggregation_interval": "INTERVAL_10_MIN",
-												"filter_expr":          "true",
+												"filter_expr":          "false",
 												"flow_sampling":        0.7,
 												"metadata":             "INCLUDE_ALL_METADATA",
 												"metadata_fields":      null,
 											},
 										],
-										"name":                     "subnet-003",
+										"name":                     "subnet-03",
 										"network":                  "my-custom-mode-network",
 										"private_ip_google_access": false,
 										"project":                  "lucky-apparatus-366518",
@@ -1361,20 +1821,75 @@ raw = {
 					],
 				},
 			],
-			"resources": [
-				{
-					"address":          "null_resource.create_file",
-					"mode":             "managed",
-					"name":             "create_file",
-					"provider_name":    "registry.terraform.io/hashicorp/null",
-					"schema_version":   0,
-					"sensitive_values": {},
-					"type":             "null_resource",
-					"values": {
-						"triggers": null,
-					},
+		},
+	},
+	"prior_state": {
+		"format_version":    "1.0",
+		"terraform_version": "1.3.3",
+		"values": {
+			"outputs": {
+				"network_name": {
+					"sensitive": false,
+					"value":     "my-custom-mode-network",
 				},
-			],
+				"project_id": {
+					"sensitive": false,
+					"value":     "lucky-apparatus-366518",
+				},
+				"route_names": {
+					"sensitive": false,
+					"value":     [],
+				},
+				"subnets_flow_logs": {
+					"sensitive": false,
+					"value": [
+						false,
+						true,
+						true,
+					],
+				},
+				"subnets_ips": {
+					"sensitive": false,
+					"value": [
+						"10.10.10.0/24",
+						"10.10.20.0/24",
+						"10.10.30.0/24",
+					],
+				},
+				"subnets_names": {
+					"sensitive": false,
+					"value": [
+						"subnet-01",
+						"subnet-02",
+						"subnet-03",
+					],
+				},
+				"subnets_private_access": {
+					"sensitive": false,
+					"value": [
+						false,
+						true,
+						false,
+					],
+				},
+				"subnets_regions": {
+					"sensitive": false,
+					"value": [
+						"us-west1",
+						"us-west1",
+						"us-west1",
+					],
+				},
+				"subnets_secondary_ranges": {
+					"sensitive": false,
+					"value": [
+						[],
+						[],
+						[],
+					],
+				},
+			},
+			"root_module": {},
 		},
 	},
 	"relevant_attributes": [
@@ -1389,22 +1904,6 @@ raw = {
 			"resource":  "module.test-vpc-module.module.subnets.google_compute_subnetwork.subnetwork",
 		},
 		{
-			"attribute": [
-				"name",
-			],
-			"resource": "module.test-vpc-module.module.vpc.google_compute_network.network",
-		},
-		{
-			"attribute": [
-				"id",
-			],
-			"resource": "module.test-vpc-module.module.vpc.google_compute_network.network",
-		},
-		{
-			"attribute": [],
-			"resource":  "module.test-vpc-module.module.vpc.google_compute_shared_vpc_host_project.shared_vpc_host",
-		},
-		{
 			"attribute": [],
 			"resource":  "module.test-vpc-module.module.routes.google_compute_route.route",
 		},
@@ -1414,9 +1913,25 @@ raw = {
 		},
 		{
 			"attribute": [
+				"id",
+			],
+			"resource": "module.test-vpc-module.module.vpc.google_compute_network.network",
+		},
+		{
+			"attribute": [
+				"name",
+			],
+			"resource": "module.test-vpc-module.module.vpc.google_compute_network.network",
+		},
+		{
+			"attribute": [
 				"self_link",
 			],
 			"resource": "module.test-vpc-module.module.vpc.google_compute_network.network",
+		},
+		{
+			"attribute": [],
+			"resource":  "module.test-vpc-module.module.vpc.google_compute_shared_vpc_host_project.shared_vpc_host",
 		},
 		{
 			"attribute": [],
@@ -1425,7 +1940,7 @@ raw = {
 	],
 	"resource_changes": [
 		{
-			"address": "module.test-vpc-module.module.subnets.google_compute_subnetwork.subnetwork[\"us-west1/subnet-001\"]",
+			"address": "module.test-vpc-module.module.subnets.google_compute_subnetwork.subnetwork[\"us-west1/subnet-01\"]",
 			"change": {
 				"actions": [
 					"create",
@@ -1435,7 +1950,7 @@ raw = {
 					"ip_cidr_range":            "10.10.10.0/24",
 					"ipv6_access_type":         null,
 					"log_config":               [],
-					"name":                     "subnet-001",
+					"name":                     "subnet-01",
 					"network":                  "my-custom-mode-network",
 					"private_ip_google_access": false,
 					"project":                  "lucky-apparatus-366518",
@@ -1465,7 +1980,7 @@ raw = {
 				"before":           null,
 				"before_sensitive": false,
 			},
-			"index":          "us-west1/subnet-001",
+			"index":          "us-west1/subnet-01",
 			"mode":           "managed",
 			"module_address": "module.test-vpc-module.module.subnets",
 			"name":           "subnetwork",
@@ -1473,7 +1988,7 @@ raw = {
 			"type":           "google_compute_subnetwork",
 		},
 		{
-			"address": "module.test-vpc-module.module.subnets.google_compute_subnetwork.subnetwork[\"us-west1/subnet-002\"]",
+			"address": "module.test-vpc-module.module.subnets.google_compute_subnetwork.subnetwork[\"us-west1/subnet-02\"]",
 			"change": {
 				"actions": [
 					"create",
@@ -1491,7 +2006,7 @@ raw = {
 							"metadata_fields":      null,
 						},
 					],
-					"name":                     "subnet-002",
+					"name":                     "subnet-02",
 					"network":                  "my-custom-mode-network",
 					"private_ip_google_access": true,
 					"project":                  "lucky-apparatus-366518",
@@ -1525,7 +2040,7 @@ raw = {
 				"before":           null,
 				"before_sensitive": false,
 			},
-			"index":          "us-west1/subnet-002",
+			"index":          "us-west1/subnet-02",
 			"mode":           "managed",
 			"module_address": "module.test-vpc-module.module.subnets",
 			"name":           "subnetwork",
@@ -1533,7 +2048,7 @@ raw = {
 			"type":           "google_compute_subnetwork",
 		},
 		{
-			"address": "module.test-vpc-module.module.subnets.google_compute_subnetwork.subnetwork[\"us-west1/subnet-003\"]",
+			"address": "module.test-vpc-module.module.subnets.google_compute_subnetwork.subnetwork[\"us-west1/subnet-03\"]",
 			"change": {
 				"actions": [
 					"create",
@@ -1545,13 +2060,13 @@ raw = {
 					"log_config": [
 						{
 							"aggregation_interval": "INTERVAL_10_MIN",
-							"filter_expr":          "true",
+							"filter_expr":          "false",
 							"flow_sampling":        0.7,
 							"metadata":             "INCLUDE_ALL_METADATA",
 							"metadata_fields":      null,
 						},
 					],
-					"name":                     "subnet-003",
+					"name":                     "subnet-03",
 					"network":                  "my-custom-mode-network",
 					"private_ip_google_access": false,
 					"project":                  "lucky-apparatus-366518",
@@ -1585,7 +2100,7 @@ raw = {
 				"before":           null,
 				"before_sensitive": false,
 			},
-			"index":          "us-west1/subnet-003",
+			"index":          "us-west1/subnet-03",
 			"mode":           "managed",
 			"module_address": "module.test-vpc-module.module.subnets",
 			"name":           "subnetwork",
@@ -1625,27 +2140,11 @@ raw = {
 			"provider_name":  "registry.terraform.io/hashicorp/google",
 			"type":           "google_compute_network",
 		},
-		{
-			"address": "null_resource.create_file",
-			"change": {
-				"actions": [
-					"create",
-				],
-				"after": {
-					"triggers": null,
-				},
-				"after_sensitive": {},
-				"after_unknown": {
-					"id": true,
-				},
-				"before":           null,
-				"before_sensitive": false,
-			},
-			"mode":          "managed",
-			"name":          "create_file",
-			"provider_name": "registry.terraform.io/hashicorp/null",
-			"type":          "null_resource",
-		},
 	],
 	"terraform_version": "1.3.3",
+	"variables": {
+		"project_id": {
+			"value": "lucky-apparatus-366518",
+		},
+	},
 }

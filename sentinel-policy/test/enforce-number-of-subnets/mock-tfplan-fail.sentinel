@@ -261,6 +261,7 @@ resource_changes = {
 					},
 				],
 				"name":                     "subnet-003",
+				"network_type":             "composer-node-primary",
 				"network":                  "my-custom-mode-network",
 				"private_ip_google_access": false,
 				"project":                  "lucky-apparatus-366518",

@@ -1,0 +1,56 @@
+# Import common-functions/tfplan-functions/tfplan-functions.sentinel
+# with alias "plan"
+
+import "tfplan-functions" as tfplan
+
+##### Functions #####
+
+### check_number_of_networks ###
+# Check if the number of planned networks
+# is less than the number of allowed ones
+# attribute (attr) is a list of the planned resources
+# attribute (value) is the subnet enumeration
+# Set prtmsg to `true` (without quotes) if you want to print violation messages.
+# If you want to match null, set value to "null".
+# author: dennis.silva@db.com
+check_number_of_networks = func(resources, value, prtmsg) {
+  network_limits = {
+    "ainotebook-vpc-primary": 3, 
+	"cloudsql-vpc-primary": 2,
+	"composer-master-primary": 5,
+	"composer-node-primary": 1,
+  } 
+  subnet_limit = network_limits[value]
+  
+  violators = 0
+  messages = {}
+    for resources as address, rc {
+      v = tfplan.evaluate_attribute(rc, "network_type") else null
+        if v is null {
+          v = "null"
+        }
+        if v is value {
+          violators += 1
+        }
+    }
+  
+  if violators > subnet_limit {
+    message = "Number of " + tfplan.to_string(value) + " subnets(" + tfplan.to_string(violators) + 
+	  ") is greater than allowed for automatic provisioning(" + tfplan.to_string(subnet_limit) + ")"
+      if prtmsg {
+        print(message)
+      }
+    return false   
+  }
+
+  return true
+}
+
+
+resources_by_google_provider = tfplan.find_resources("google_compute_subnetwork")
+result = check_number_of_networks (resources_by_google_provider, "composer-node-primary", true)
+
+main = rule {
+	# make check here
+	result
+	}

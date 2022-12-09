@@ -30,7 +30,7 @@ check_number_of_networks = func(resources, value, prtmsg) {
     "ainotebook-vpc-primary": 3, 
 	"cloudsql-vpc-primary": 2,
 	"composer-master-primary": 5,
-	"composer-node-primary": 2,
+	"composer-node-primary": 1,
   } 
   subnet_limit = network_limits[value]
   
